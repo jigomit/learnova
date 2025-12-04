@@ -3,6 +3,13 @@ import { RouterLink } from 'vue-router'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import { blogPosts } from '@/data/blog'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+    title: 'Blog',
+    description: 'Read stories, tips, and updates from Learnova. Learn about education initiatives, volunteer experiences, and the impact of free education worldwide.',
+    url: 'https://learnova.org/blog',
+})
 
 const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {

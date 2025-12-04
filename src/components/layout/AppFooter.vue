@@ -36,7 +36,9 @@ import { footerNavigation } from '@/data/navigation'
                     <!-- Social Links -->
                     <div class="mt-6 flex gap-4">
                         <a
-                            href="#"
+                            href="https://facebook.com/learnova"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             class="text-neutral-400 transition-colors hover:text-white"
                             aria-label="Facebook"
                         >
@@ -47,7 +49,9 @@ import { footerNavigation } from '@/data/navigation'
                             </svg>
                         </a>
                         <a
-                            href="#"
+                            href="https://twitter.com/learnova"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             class="text-neutral-400 transition-colors hover:text-white"
                             aria-label="Twitter"
                         >
@@ -58,7 +62,9 @@ import { footerNavigation } from '@/data/navigation'
                             </svg>
                         </a>
                         <a
-                            href="#"
+                            href="https://instagram.com/learnova"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             class="text-neutral-400 transition-colors hover:text-white"
                             aria-label="Instagram"
                         >
@@ -69,7 +75,9 @@ import { footerNavigation } from '@/data/navigation'
                             </svg>
                         </a>
                         <a
-                            href="#"
+                            href="https://linkedin.com/company/learnova"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             class="text-neutral-400 transition-colors hover:text-white"
                             aria-label="LinkedIn"
                         >

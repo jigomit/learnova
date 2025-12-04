@@ -4,8 +4,15 @@ import PageHero from '@/components/shared/PageHero.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import CTABanner from '@/components/shared/CTABanner.vue'
 import { getProgram } from '@/data/programs'
+import { useSeo } from '@/composables/useSeo'
 
 const program = getProgram('free-schooling')!
+
+useSeo({
+    title: 'Free Schooling Program',
+    description: 'Quality education at no cost for underprivileged children. Learn about Learnova\'s free schooling program providing qualified teachers, supplies, and nutritious meals.',
+    url: 'https://learnova.org/programs/free-schooling',
+})
 </script>
 
 <template>

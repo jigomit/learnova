@@ -1,10 +1,16 @@
 <script setup lang="ts">
-
 import { ref } from 'vue'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import PageHero from '@/components/shared/PageHero.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import { getProgram } from '@/data/programs'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+    title: 'Become a Volunteer',
+    description: 'Join Learnova as a volunteer teacher. Share your knowledge and passion to help underprivileged children reach their full potential through education.',
+    url: 'https://learnova.org/volunteer',
+})
 
 const program = getProgram('volunteer-teachers')!
 

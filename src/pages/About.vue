@@ -1,9 +1,15 @@
 <script setup lang="ts">
-
 import AppLayout from '@/components/layout/AppLayout.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import CTABanner from '@/components/shared/CTABanner.vue'
 import { teamMembers, milestones } from '@/data/team'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+    title: 'About Us',
+    description: 'Learn about Learnova\'s mission to provide free education to underprivileged children worldwide. Discover our story, team, and milestones.',
+    url: 'https://learnova.org/about',
+})
 </script>
 
 <template>

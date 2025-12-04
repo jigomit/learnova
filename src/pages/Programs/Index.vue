@@ -5,6 +5,13 @@ import PageHero from '@/components/shared/PageHero.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import CTABanner from '@/components/shared/CTABanner.vue'
 import { programs } from '@/data/programs'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+    title: 'Our Programs',
+    description: 'Explore Learnova\'s educational programs: free schooling, e-learning resources, scholarships, and volunteer teacher opportunities for underprivileged children.',
+    url: 'https://learnova.org/programs',
+})
 
 const getIcon = (iconName: string) => {
     const icons: Record<string, string> = {

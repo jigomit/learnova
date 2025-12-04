@@ -1,9 +1,15 @@
 <script setup lang="ts">
-
 import { ref } from 'vue'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import PageHero from '@/components/shared/PageHero.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+    title: 'Contact Us',
+    description: 'Get in touch with Learnova. Contact us about volunteering, donations, partnerships, or to learn more about our free education programs.',
+    url: 'https://learnova.org/contact',
+})
 
 const formData = ref({
     name: '',
@@ -182,7 +188,9 @@ const handleSubmit = async () => {
                                 <h3 class="font-semibold text-neutral-900">Follow Us</h3>
                                 <div class="mt-4 flex gap-4">
                                     <a
-                                        href="#"
+                                        href="https://facebook.com/learnova"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 transition-colors hover:bg-primary-100 hover:text-primary-600"
                                         aria-label="Facebook"
                                     >
@@ -193,7 +201,9 @@ const handleSubmit = async () => {
                                         </svg>
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://twitter.com/learnova"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 transition-colors hover:bg-primary-100 hover:text-primary-600"
                                         aria-label="Twitter"
                                     >
@@ -204,7 +214,9 @@ const handleSubmit = async () => {
                                         </svg>
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://instagram.com/learnova"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 transition-colors hover:bg-primary-100 hover:text-primary-600"
                                         aria-label="Instagram"
                                     >
@@ -215,7 +227,9 @@ const handleSubmit = async () => {
                                         </svg>
                                     </a>
                                     <a
-                                        href="#"
+                                        href="https://linkedin.com/company/learnova"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         class="flex h-10 w-10 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 transition-colors hover:bg-primary-100 hover:text-primary-600"
                                         aria-label="LinkedIn"
                                     >

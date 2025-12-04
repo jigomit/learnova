@@ -4,10 +4,19 @@ import { computed } from 'vue'
 import AppLayout from '@/components/layout/AppLayout.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import { getBlogPost } from '@/data/blog'
+import { useSeo } from '@/composables/useSeo'
 
 const route = useRoute()
 const slug = computed(() => route.params.slug as string)
 const post = computed(() => getBlogPost(slug.value))
+
+useSeo({
+    title: computed(() => post.value?.title || 'Blog Post'),
+    description: computed(() => post.value?.excerpt || 'Read this article on Learnova blog.'),
+    image: computed(() => post.value?.image || ''),
+    url: computed(() => `https://learnova.org/blog/${slug.value}`),
+    type: 'article',
+})
 
 const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('en-US', {

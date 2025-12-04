@@ -1,12 +1,18 @@
 <script setup lang="ts">
-
 import AppLayout from '@/components/layout/AppLayout.vue'
 import PageHero from '@/components/shared/PageHero.vue'
 import ScrollReveal from '@/components/shared/ScrollReveal.vue'
 import CTABanner from '@/components/shared/CTABanner.vue'
 import { getProgram } from '@/data/programs'
+import { useSeo } from '@/composables/useSeo'
 
 const program = getProgram('scholarships')!
+
+useSeo({
+    title: 'Scholarships',
+    description: 'Financial support for deserving students to pursue higher education. Learn about Learnova\'s scholarship program eligibility and application process.',
+    url: 'https://learnova.org/programs/scholarships',
+})
 </script>
 
 <template>

@@ -1,0 +1,8 @@
+# Robots.txt for Learnova
+# https://learnova.org
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://learnova.org/sitemap.xml

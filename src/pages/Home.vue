@@ -6,6 +6,13 @@ import ImpactStats from '@/components/home/ImpactStats.vue'
 import FeaturedPrograms from '@/components/home/FeaturedPrograms.vue'
 import TestimonialsSection from '@/components/home/TestimonialsSection.vue'
 import CTABanner from '@/components/shared/CTABanner.vue'
+import { useSeo } from '@/composables/useSeo'
+
+useSeo({
+    title: 'Home',
+    description: 'Learnova provides free schooling, e-learning resources, scholarships, and volunteer teacher programs to underprivileged children worldwide.',
+    url: 'https://learnova.org',
+})
 </script>
 
 <template>
