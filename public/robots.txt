@@ -1,8 +1,36 @@
 # Robots.txt for Learnova
 # https://learnova.org
 
+# Allow all search engines to crawl the entire site
 User-agent: *
 Allow: /
 
+# Crawl-delay for polite crawling (optional, in seconds)
+Crawl-delay: 1
+
+# Block access to internal/development paths (if any)
+Disallow: /api/
+Disallow: /_nuxt/
+Disallow: /.well-known/
+
+# Allow important resources for SEO
+Allow: /assets/
+Allow: /images/
+Allow: /*.js
+Allow: /*.css
+
 # Sitemap location
 Sitemap: https://learnova.org/sitemap.xml
+
+# Additional directives for specific bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1

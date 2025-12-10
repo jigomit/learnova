@@ -10,7 +10,7 @@ import { useSeo } from '@/composables/useSeo'
 
 useSeo({
     title: 'Home',
-    description: 'Learnova provides free schooling, e-learning resources, scholarships, and volunteer teacher programs to underprivileged children worldwide.',
+    description: 'Learnova provides free education for underprivileged children worldwide. Access free schooling programs, online learning resources, scholarships for low-income students, and volunteer teaching opportunities.',
     url: 'https://learnova.org',
 })
 </script>
