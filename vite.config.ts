@@ -20,19 +20,12 @@ export default defineConfig({
     build: {
         // Performance optimizations for production
         target: 'es2020',
-        minify: 'terser',
-        terserOptions: {
-            compress: {
-                drop_console: true,
-                drop_debugger: true,
-            },
-        },
+        minify: 'esbuild',
         rollupOptions: {
             output: {
                 // Code splitting for better caching
                 manualChunks: {
                     'vue-vendor': ['vue', 'vue-router'],
-                    'utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
                 },
                 // Asset naming for better caching
                 chunkFileNames: 'assets/js/[name]-[hash].js',
