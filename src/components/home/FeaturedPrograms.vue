@@ -139,7 +139,9 @@ const getColorClasses = (color: string) => {
                                 <img
                                     :src="program.image"
                                     :alt="program.imageAlt"
-                                    class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    class="h-full w-full object-cover transition-transform duration-500 md:group-hover:scale-110"
+                                    loading="lazy"
+                                    decoding="async"
                                 />
                                 <!-- Gradient overlay -->
                                 <div
@@ -259,9 +261,12 @@ const getColorClasses = (color: string) => {
     transition: opacity 0.3s ease;
 }
 
-.group:hover .shimmer-effect {
-    opacity: 1;
-    animation: shimmer 1.5s ease-in-out;
+/* Only enable shimmer on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+    .group:hover .shimmer-effect {
+        opacity: 1;
+        animation: shimmer 1.5s ease-in-out;
+    }
 }
 
 @keyframes shimmer {
@@ -283,8 +288,17 @@ const getColorClasses = (color: string) => {
     }
 }
 
-/* Add subtle pulse to icon background on hover */
-.group:hover [class*="inline-flex"][class*="h-14"] {
-    animation: pulse-scale 2s ease-in-out infinite;
+/* Add subtle pulse to icon background on hover - desktop only */
+@media (hover: hover) and (pointer: fine) {
+    .group:hover [class*="inline-flex"][class*="h-14"] {
+        animation: pulse-scale 2s ease-in-out infinite;
+    }
+}
+
+/* Disable animations on mobile */
+@media (max-width: 768px) {
+    .shimmer-effect {
+        display: none;
+    }
 }
 </style>

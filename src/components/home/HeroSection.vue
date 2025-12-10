@@ -19,13 +19,26 @@ onUnmounted(() => {
 
 <template>
     <section class="relative min-h-screen overflow-hidden bg-gradient-hero">
-        <!-- Background Image -->
+        <!-- Background Image with lazy loading and srcset for mobile optimization -->
         <div class="absolute inset-0">
-            <img
-                src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920"
-                alt="Happy children studying together"
-                class="h-full w-full object-cover"
-            />
+            <picture>
+                <source
+                    media="(max-width: 640px)"
+                    srcset="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=640&q=75"
+                />
+                <source
+                    media="(max-width: 1024px)"
+                    srcset="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1024&q=80"
+                />
+                <img
+                    src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1920&q=85"
+                    alt="Happy children studying together"
+                    class="h-full w-full object-cover"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
+                />
+            </picture>
             <div class="absolute inset-0 bg-gradient-to-br from-violet-900/90 via-primary-900/85 to-indigo-900/90"></div>
         </div>
 
@@ -49,8 +62,8 @@ onUnmounted(() => {
             class="absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-accent-cyan/30 blur-3xl"
         ></div>
 
-        <!-- Floating Animated Shapes -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Floating Animated Shapes - Hidden on mobile for performance -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none hidden md:block">
             <!-- Circles -->
             <div class="floating-shape absolute top-20 left-10 w-16 h-16 rounded-full bg-accent-purple/20 animate-float" style="animation-delay: 0s;"></div>
             <div class="floating-shape absolute top-40 right-20 w-12 h-12 rounded-full bg-primary-300/30 animate-float-slow" style="animation-delay: 1s;"></div>
@@ -63,8 +76,8 @@ onUnmounted(() => {
             <div class="floating-shape absolute top-1/2 left-20 w-12 h-12 bg-accent-cyan/15 animate-float-slow -rotate-12" style="animation-delay: 0.8s;"></div>
         </div>
 
-        <!-- Animated Stars and Sparkles -->
-        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+        <!-- Animated Stars and Sparkles - Hidden on mobile for performance -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none hidden lg:block">
             <!-- Stars -->
             <div class="absolute top-24 left-1/4 animate-twinkle" style="animation-delay: 0s;">
                 <svg class="w-6 h-6 text-accent-purple/60" fill="currentColor" viewBox="0 0 24 24">

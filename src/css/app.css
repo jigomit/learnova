@@ -1524,3 +1524,183 @@ html.dark ::selection {
 * {
     transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
+
+/* ========================================
+   MOBILE PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* Reduce animations on mobile for better performance */
+@media (max-width: 768px) {
+    /* Disable complex animations on mobile */
+    .blob-animate,
+    .blob-animate-fast,
+    .blob-float,
+    .blob-spin {
+        animation: none !important;
+    }
+
+    /* Simplify floating animations */
+    .animate-float,
+    .float-particle-1,
+    .float-particle-2,
+    .float-particle-3,
+    .float-up,
+    .drift,
+    .orbit {
+        animation: none !important;
+    }
+
+    /* Reduce blur effects on mobile (GPU intensive) */
+    .glass,
+    .glass-dark,
+    .glass-strong,
+    .glass-card,
+    .glass-frosted {
+        backdrop-filter: blur(8px) !important;
+        -webkit-backdrop-filter: blur(8px) !important;
+    }
+
+    /* Disable complex hover effects on touch devices */
+    .hover-glow:hover,
+    .hover-glow-purple:hover,
+    .hover-glow-green:hover,
+    .hover-glow-coral:hover,
+    .hover-glow-teal:hover {
+        box-shadow: none !important;
+    }
+
+    /* Simplify 3D transforms */
+    .card-3d:hover,
+    .card-tilt:hover,
+    .card-flip:hover {
+        transform: none !important;
+    }
+
+    /* Reduce shadow complexity */
+    .hover-lift:hover,
+    .hover-lift-lg:hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+    }
+
+    /* Disable shimmer animations */
+    .shimmer,
+    .shimmer-dark,
+    .shimmer-wave::after {
+        animation: none !important;
+    }
+
+    /* Optimize gradient animations */
+    .text-gradient-vibrant,
+    .text-gradient-animate,
+    .text-gradient-rainbow,
+    .bg-aurora,
+    .bg-aurora-subtle {
+        animation: none !important;
+        background-size: 100% 100% !important;
+    }
+
+    /* Reduce animation durations */
+    .animate-fade-in-up,
+    .animate-fade-in-down,
+    .animate-fade-in-left,
+    .animate-fade-in-right,
+    .animate-scale-in {
+        animation-duration: 0.3s !important;
+    }
+
+    /* Optimize scroll reveal */
+    .reveal-visible {
+        transition-duration: 0.4s !important;
+    }
+
+    /* Disable twinkle effects */
+    .twinkle,
+    .animate-twinkle {
+        animation: none !important;
+        opacity: 0.7 !important;
+    }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .animate-float,
+    .animate-pulse-soft,
+    .blob-animate,
+    .blob-animate-fast,
+    .blob-float,
+    .blob-spin,
+    .float-particle-1,
+    .float-particle-2,
+    .float-particle-3,
+    .shimmer,
+    .shimmer-dark,
+    .text-gradient-vibrant,
+    .text-gradient-animate,
+    .bg-aurora,
+    .twinkle {
+        animation: none !important;
+    }
+}
+
+/* GPU acceleration hints for smooth animations */
+.animate-fade-in-up,
+.animate-fade-in-down,
+.animate-fade-in-left,
+.animate-fade-in-right,
+.animate-scale-in,
+.animate-float,
+.hover-lift,
+.hover-lift-lg,
+.card-3d,
+.card-tilt,
+.card-flip {
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Optimize images */
+img {
+    content-visibility: auto;
+}
+
+/* Contain paint for performance */
+.glass,
+.glass-dark,
+.glass-strong,
+.glass-card,
+.glass-frosted {
+    contain: layout style paint;
+}
+
+/* Font display optimization */
+@font-face {
+    font-display: swap;
+}
+
+/* Touch action optimization for mobile */
+@media (max-width: 768px) {
+    a, button {
+        touch-action: manipulation;
+    }
+
+    /* Prevent tap highlight on mobile */
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Optimize scrolling */
+    html {
+        -webkit-overflow-scrolling: touch;
+    }
+}
